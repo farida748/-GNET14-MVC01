@@ -17,5 +17,7 @@
 
         public DateTime ? UpdatedAt { get; set; }
 
-}
+        public List<Membership> Memberships { get; set; } = new();
+
+    }
 }

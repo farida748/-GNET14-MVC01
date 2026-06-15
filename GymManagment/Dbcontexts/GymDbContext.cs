@@ -12,7 +12,13 @@ namespace GymManagment.DbContexts
         {
             optionsBuilder.UseSqlServer("Server=.;Database=GymManagment;Trusted_Connection=true;TrustServerCertificate=true");
         }
+        public DbSet<Member> Members { get; set; }
+        public DbSet<Trainer> Trainers { get; set; }
         public DbSet<Plan> Plans { get; set; }
+        public DbSet<Membership> Memberships { get; set; }
+        public DbSet<Session> Sessions { get; set; }
+        public DbSet<MemberSession> MemberSessions { get; set; }
+        public DbSet<AppUser> Users { get; set; }
         override protected void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration<Plan>(new PlanConfigration());
