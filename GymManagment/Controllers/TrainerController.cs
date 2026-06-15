@@ -32,5 +32,42 @@ namespace GymManagment.Controllers
             return View(trainer);
         }
 
+
+        public async Task<IActionResult> Edit(int id)
+        {
+            var trainer = await _context.Trainers.FindAsync(id);
+
+            if (trainer == null)
+            {
+                return NotFound();
+            }
+
+            return View(trainer);
+        }
+
+
+
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            var trainer = await _context.Trainers.FindAsync(id);
+
+            if (trainer == null)
+            {
+                return NotFound();
+            }
+
+            return View(trainer);
+        }
+
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+
+
     }
+
 }
