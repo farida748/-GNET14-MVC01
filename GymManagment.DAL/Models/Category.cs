@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GymManagment.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,5 +10,7 @@ namespace GymManagment.DAL.Models
    public class Category:BaseEntity
     {
         public string CategoryName { get; set; }
+
+        public ICollection<Session> Sessions { get; set; } = default!;
     }
 }

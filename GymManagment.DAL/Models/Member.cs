@@ -1,19 +1,21 @@
-﻿namespace GymManagment.Models
+﻿using GymManagment.DAL.Models;
+using GymManagment.Models;
+using System.Collections.Generic;
+
+namespace GymManagementSystem.DAL.Models
 {
-    public class Member: GymUser
+    public class Member : GymUser
     {
+        public string? Photo { get; set; } 
 
-        public String?  Photo { get; set; }
-        //public int Id { get; set; }
-        //public string FullName { get; set; }
-        //public string Phone { get; set; }
-        //public string Email { get; set; }
-        //public DateTime JoinDate { get; set; }
+        #region Relationships
 
-        //public int? MembershipId { get; set; }
-        //public Membership? Membership { get; set; }
+        public HealthRecord HealthRecord { get; set; } = default!;
 
-        //public List<MemberSession> MemberSessions { get; set; } = new();
+        public ICollection<MemberShip> MemberShip { get; set; } = new List<MemberShip>();
+
+        #endregion
     }
-    }
+}
+
 

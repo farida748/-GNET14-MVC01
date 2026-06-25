@@ -1,5 +1,7 @@
 ﻿
+using GymManagementSystem.DAL.Models;
 using GymManagment.Configration;
+using GymManagment.DAL.Models;
 using GymManagment.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
@@ -18,15 +20,17 @@ namespace GymManagment.DbContexts
         public DbSet<Member> Members { get; set; }
         public DbSet<Trainer> Trainers { get; set; }
         public DbSet<Plan> Plans { get; set; }
-        public DbSet<Membership> Memberships { get; set; }
+        public DbSet<MemberShip> Memberships { get; set; }
         public DbSet<Session> Sessions { get; set; }
-        public DbSet<MemberSession> MemberSessions { get; set; }
+       
         public DbSet<GymUser> Users { get; set; }
         override protected void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration<Plan>(new PlanConfigration());
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(GymDbContext).Assembly);
+
+            base.OnModelCreating(modelBuilder);
         }
+    }
 
       
     }
-}

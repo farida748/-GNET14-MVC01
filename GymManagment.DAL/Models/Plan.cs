@@ -14,9 +14,9 @@ namespace GymManagment.Models
 
         public int DurationDays { get; set; }
 
-       
+       public ICollection<MemberShip> MemberShips { get; set; } = default!;
 
-       
+
 
     }
 }

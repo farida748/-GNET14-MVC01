@@ -1,4 +1,5 @@
-﻿using GymManagment.Models;
+﻿using GymManagementSystem.DAL.Models;
+using GymManagment.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

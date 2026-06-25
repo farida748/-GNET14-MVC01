@@ -1,4 +1,5 @@
-﻿@model Plan
+﻿@using GymManagment.Models
+@model Plan
 
 
 @{
@@ -14,13 +15,13 @@
                         <div class="card shadow-lg border-0">
                             @* If Plan is Active put class bg-primary-color if not bg-secondary *@
 
-                            <div class="card-header text-white text-center py-5@(Model.isActive?"bg-primary-color":"bg-secondary")">
+                            <div class="card-header text-white text-center py-5@(Model.IsActive?" bg-primary-color":" bg-secondary")">
                                 <i class="bi bi-award display-4 mb-3"></i>
-                                <h2 class="mb-0">@Model.name</h2>
+                                <h2 class="mb-0">@Model.Name</h2>
                             </div>
                             <div class="card-body p-4">
                                 <div class="text-center mb-4 py-3 bg-light rounded">
-                                    <div class="display-3 fw-bold text-primary-color">@Model.price</div>
+                                    <div class="display-3 fw-bold text-primary-color">@Model.Price</div>
                                     <small class="text-muted fs-5">EGP</small>
                                 </div>
 
@@ -44,7 +45,7 @@
                                             </div>
                                             <div class="flex-grow-1">
                                                 <h6 class="mb-2 text-muted">Description</h6>
-                                                <p class="mb-0">@Model.description</p>
+                                                <p class="mb-0">@Model.Description</p>
                                             </div>
                                         </div>
                                     </div>
@@ -53,13 +54,13 @@
                                         <div class="d-flex align-items-center mb-2">
                                             <div class="icon-box me-3">
                                                 @* If Plan is Active put class bi-check-circle-fill text-success if not bi-x-circle-fill text-danger *@
-                                                <i class="bi fs-4 @(Model.isActive ? "bi-check-circle-fill text-success" : "bi-x-circle-fill text-danger")"></i>
+                                                <i class="bi fs-4 @(Model.IsActive ? "bi-check-circle-fill text-success" : "bi-x-circle-fill text-danger")"></i>
                                             </div>
                                             <div>
                                                 <h6 class="mb-0 text-muted">Status</h6>
                                                 <p class="mb-0">
                                                     @* If Plan is Active *@
-                                                    @if (Model.isActive)
+                                                    @if (Model.IsActive)
                                                     {
                                                         <span class="badge bg-success">
                                                             Active
